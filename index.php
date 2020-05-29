@@ -5,3 +5,6 @@ spl_autoload_register(function($classname){
             require "src/$classname.php";
         }
 });
+
+
+$unidad = new Player();
