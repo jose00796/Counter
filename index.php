@@ -8,3 +8,8 @@ spl_autoload_register(function($classname){
         }
 });
 
+$jose = new Terrorist('Jose');
+$david = new C_Terrorist('David');
+
+$jose->Attack($david);
+$david->Attack($jose);
