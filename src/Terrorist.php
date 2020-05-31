@@ -4,14 +4,19 @@ class Terrorist extends Player
 {
     protected $name;
     protected $damage = 50;
+    protected $vest;
 
-    public function __construct($name)
+    public function __construct($name, Vest $vest = null)
     {
         parent::__construct($name);
+        $this->vest = $vest;
     }
 
     public function TakeDamage($damage)
     {
+        if ($this->vest) {
+            $damage = $this->vest->AbsorbDamage($damage);
+        }
         parent::TakeDamage($damage);
     }
 
